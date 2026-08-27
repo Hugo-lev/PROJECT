@@ -16,5 +16,6 @@
   "flower_name": ["Tulip","Daffodil","Poppy","Sunflower","Bluebell","Rose","Snowdrop","Cherry","blossom"],
   "flower_price": ["15$","25$","12$","20$","35$","30$","22$","19$","9$"],
   "famous_words": ["World is Beautiful with Flowers"],
-  "famous_name": ["Steve Jobs"]
+  "famous_name": ["Steve Jobs"],
+  "freelance":["available"]
 }
