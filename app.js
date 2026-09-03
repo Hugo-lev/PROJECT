@@ -9,6 +9,7 @@ const fs = require("fs");
 //MONGODBNI CHAQRISH
 
 const db = require("./server").db();
+const mongodb =require("mongodb")
 
 // let user;
 // fs.readFile("database/user.json", "utf8", (err, data) => {
@@ -35,14 +36,19 @@ app.post("/create-item",(req,res) => {
   console.log(req.body);
   const new_reja = req.body.reja;
   db.collection("plans").insertOne({reja:new_reja},(err, data)=>{
-    if(err){
-      console.log(err);
-      res.end("somthing is wrong");
-    }else{
-      res.end("new plan jonined")
-    }
-  })
+   console.log(data.ops);
+   res.json(data.ops[0]);
+  });
 });
+app.post("/delete/item",(req, res) => {
+  const id= res.body.id;
+  // console.log(id);
+  db.collection("plans").deleteOne({id:new mongodb.Object(id)},
+  function(err,data){
+    res.json({state:"success"});
+    });
+
+})
 
 app.get("/author", (req, res) => {
   res.render("author", { user: user });

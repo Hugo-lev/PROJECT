@@ -84,6 +84,19 @@ async function run() {
 }
 run();
 
+function checkContent(str1, str2) {
+  
+  if (str1.length !== str2.length) return false;
+
+ 
+  return str1.split('').sort().join('') === str2.split('').sort().join('');
+}
+
+// Misollar
+console.log(checkContent("mitgroup", "gmtiprou")); 
+console.log(checkContent("hello", "world"));       
+
+
 //B TASK
 function countDigits(str) {
   let count = 0;
